@@ -1,4 +1,4 @@
-﻿# File handler {#file_handler}
+﻿# File handler {#file_handler_guide}
 
 The file handler allows the Grassroots Server to access any mounted files or directories.
 
