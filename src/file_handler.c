@@ -50,7 +50,7 @@ static bool IsResourceForFileHandler (struct Handler *handler_p, const Resource 
 static bool CalculateFileInformationFromFileHandler (struct Handler *handler_p, FileInformation *info_p);
 
 
-Handler *GetHandler (const UserDetails * UNUSED_PARAM (user_p))
+Handler *GetHandler (const UserDetails * UNUSED_PARAM (user_p), GrassrootsServer *grassroots_p)
 {
 	FileHandler *handler_p = (FileHandler *) AllocMemory (sizeof (FileHandler));
 

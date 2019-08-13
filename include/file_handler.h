@@ -58,7 +58,7 @@ extern "C"
  * @memberof FileHandler
  * @ingroup file_handler_group
  */
-FILE_HANDLER_API Handler *GetHandler (const UserDetails *user_p);
+FILE_HANDLER_API Handler *GetHandler (const UserDetails *user_p, GrassrootsServer *grassroots_p);
 
 
 /**
