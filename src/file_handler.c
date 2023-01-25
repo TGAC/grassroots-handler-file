@@ -23,7 +23,7 @@
 static bool InitFileHandler (struct Handler *handler_p, const UserDetails *user_p);
 
 
-static bool OpenFileHandler (struct Handler *handler_p, Resource *resource_p, MEM_FLAG resource_mem, const char * const mode_s);
+static bool OpenFileHandler (struct Handler *handler_p, DataResource *resource_p, MEM_FLAG resource_mem, const char * const mode_s);
 
 static size_t ReadFromFileHandler (struct Handler *handler_p, void *buffer_p, const size_t length);
 
@@ -35,7 +35,7 @@ static bool CloseFileHandler (struct Handler *handler_p);
 
 static HandlerStatus GetFileHandlerStatus (struct Handler *handler_p);
 
-static bool IsResourceForFileHandler (struct Handler *handler_p, const Resource * resource_p);
+static bool IsResourceForFileHandler (struct Handler *handler_p, const DataResource * resource_p);
 
 static const char *GetFileHandlerProtocol (struct Handler *handler_p);
 
@@ -45,7 +45,7 @@ static const char *GetFileHandlerDescription (struct Handler *handler_p);
 
 static void FreeFileHandler (struct Handler *handler_p);
 
-static bool IsResourceForFileHandler (struct Handler *handler_p, const Resource * resource_p);
+static bool IsResourceForFileHandler (struct Handler *handler_p, const DataResource * resource_p);
 
 static bool CalculateFileInformationFromFileHandler (struct Handler *handler_p, FileInformation *info_p);
 
@@ -93,7 +93,7 @@ static bool InitFileHandler (struct Handler * UNUSED_PARAM (handler_p), const Us
 }
 
 
-static bool OpenFileHandler (struct Handler *handler_p, Resource *resource_p, MEM_FLAG UNUSED_PARAM (resource_mem), const char * const mode_s)
+static bool OpenFileHandler (struct Handler *handler_p, DataResource *resource_p, MEM_FLAG UNUSED_PARAM (resource_mem), const char * const mode_s)
 {
 	FileHandler *file_handler_p = (FileHandler *) handler_p;
 
@@ -184,7 +184,7 @@ static HandlerStatus GetFileHandlerStatus (struct Handler *handler_p)
 }
 
 
-static bool IsResourceForFileHandler (struct Handler *handler_p, const Resource * resource_p)
+static bool IsResourceForFileHandler (struct Handler *handler_p, const DataResource * resource_p)
 {
 	bool match_flag = false;
 
