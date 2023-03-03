@@ -19,6 +19,8 @@
 
 #include "memory_allocations.h"
 #include "data_resource.h"
+#include "grassroots_server.h"
+
 
 static bool InitFileHandler (struct Handler *handler_p, const UserDetails *user_p);
 
