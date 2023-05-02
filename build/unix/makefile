@@ -1,10 +1,11 @@
 NAME 		:= file_handler
-DIR_BUILD :=  $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-DIR_SRC := $(realpath $(DIR_BUILD)/../../src)
-DIR_INCLUDE := $(realpath $(DIR_BUILD)/../../include)
+DIR_BUILD :=  $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/$(PLATFORM))
+DIR_SRC := $(realpath $(DIR_BUILD)/../../../src)
+DIR_INCLUDE := $(realpath $(DIR_BUILD)/../../../include)
 
 ifeq ($(DIR_BUILD_CONFIG),)
-export DIR_BUILD_CONFIG := $(realpath $(DIR_BUILD)/../../../../build-config/linux)
+export DIR_BUILD_CONFIG = $(realpath $(DIR_BUILD)/../../../../../build-config/unix/)
+#export DIR_BUILD_CONFIG = /Users/tyrrells/Projects/grassroots/build-config/unix/
 endif
 
 include $(DIR_BUILD_CONFIG)/project.properties
@@ -36,7 +37,7 @@ SRCS 	:= \
 CPPFLAGS := -DUNIX -DFILE_HANDLER_EXPORTS
 
 LDFLAGS += \
-	-L$(DIR_GRASSROOTS_HANDLE_LIB) -l$(GRASSROOTS_HANDLE_LIB_NAME) \
+	-L$(DIR_GRASSROOTS_HANDLER_LIB) -l$(GRASSROOTS_HANDLER_LIB_NAME) \
 	-L$(DIR_GRASSROOTS_UUID_LIB) -l$(GRASSROOTS_UUID_LIB_NAME) \
 
 
