@@ -56,12 +56,12 @@ extern "C"
 /**
  * Get a FileHandler.
  *
- * @param user_p The UserDetails used to determine file access permissions. This can be <code>NULL</code>.
+ * @param user_p The User used to determine file access permissions. This can be <code>NULL</code>.
  * @return The newly-allocated FileHandler or <code>NULL</code> upon error.
  * @memberof FileHandler
  * @ingroup file_handler_group
  */
-FILE_HANDLER_API Handler *GetHandler (const UserDetails *user_p, struct GrassrootsServer *grassroots_p);
+FILE_HANDLER_API Handler *GetHandler (const User *user_p, struct GrassrootsServer *grassroots_p);
 
 
 /**

@@ -22,7 +22,7 @@
 #include "grassroots_server.h"
 
 
-static bool InitFileHandler (struct Handler *handler_p, const UserDetails *user_p);
+static bool InitFileHandler (struct Handler *handler_p, const User *user_p);
 
 
 static bool OpenFileHandler (struct Handler *handler_p, DataResource *resource_p, MEM_FLAG resource_mem, const char * const mode_s);
@@ -52,7 +52,7 @@ static bool IsResourceForFileHandler (struct Handler *handler_p, const DataResou
 static bool CalculateFileInformationFromFileHandler (struct Handler *handler_p, FileInformation *info_p);
 
 
-Handler *GetHandler (const UserDetails * UNUSED_PARAM (user_p), GrassrootsServer *grassroots_p)
+Handler *GetHandler (const User * UNUSED_PARAM (user_p), GrassrootsServer *grassroots_p)
 {
 	FileHandler *handler_p = (FileHandler *) AllocMemory (sizeof (FileHandler));
 
@@ -87,7 +87,7 @@ void ReleaseHandler (Handler *handler_p)
 
 
 
-static bool InitFileHandler (struct Handler * UNUSED_PARAM (handler_p), const UserDetails * UNUSED_PARAM (user_p))
+static bool InitFileHandler (struct Handler * UNUSED_PARAM (handler_p), const User * UNUSED_PARAM (user_p))
 {
 	bool success_flag = true;
 	
